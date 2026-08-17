@@ -1,5 +1,4 @@
 # homelab
-Docker Compose configs and docs for my homelab setup.
 
 > [!WARNING]
 > This repository contains my personal homelab setup and configurations, shared as-is.
