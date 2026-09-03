@@ -4,8 +4,8 @@ Watchtower is a Docker container that automatically updates your running contain
 
 ## Setup
 
-- [docker-compose-mail](./docker-compose-mail.yaml)
-- [docker-compose-discord](./docker-compose-discord.yaml) webhook
+- [docker-compose-mail.yaml](./docker-compose-mail.yaml)
+- [docker-compose-discord.yaml](./docker-compose-discord.yaml) webhook
 
 ### CRON timings
 
