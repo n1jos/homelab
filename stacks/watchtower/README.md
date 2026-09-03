@@ -12,8 +12,6 @@ Watchtower is a Docker container that automatically updates your running contain
 - hourly `0 0 * * *`
 - weekly on sunday at 8AM `0 0 8 ? * SUN`
 
----
-
 ## Sources
 - [GitHub Archive](https://github.com/containrrr/watchtower/)
 - [GitHub Fork](https://github.com/nicholas-fedor/watchtower)
