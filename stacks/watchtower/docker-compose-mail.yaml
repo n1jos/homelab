@@ -1,0 +1,28 @@
+version: "3"
+
+networks:
+  docker_net:
+    external: true
+
+services:
+  watchtower:
+    image: nickfedor/watchtower
+    container_name: watchtower
+    restart: unless-stopped
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /etc/localtime:/etc/localtime:ro
+    environment:
+      WATCHTOWER_MONITOR_ONLY: true
+      WATCHTOWER_SCHEDULE: "0 0 8 ? * SUN"
+      WATCHTOWER_CLEANUP: true
+      WATCHTOWER_NOTIFICATION_EMAIL_FROM: $FROM_EMAIL
+      WATCHTOWER_NOTIFICATION_EMAIL_TO: $TO_EMAIL
+      WATCHTOWER_NOTIFICATION_EMAIL_SERVER: smtp.gmail.com
+      WATCHTOWER_NOTIFICATION_EMAIL_SERVER_PORT: 587
+      WATCHTOWER_NOTIFICATION_EMAIL_SERVER_USER: $FROM_EMAIL
+      WATCHTOWER_NOTIFICATION_EMAIL_SERVER_PASSWORD: $GMAIL_APP_PASSWORD
+      WATCHTOWER_NOTIFICATION_EMAIL_DELAY: 30
+      WATCHTOWER_NOTIFICATIONS: email
+    networks:
+      - docker_net
