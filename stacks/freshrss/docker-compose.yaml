@@ -1,0 +1,24 @@
+version: '3'
+
+networks:
+  docker_net:
+    external: true
+
+volumes:
+  config:
+
+services:
+  freshrss:
+    image: lscr.io/linuxserver/freshrss:latest
+    container_name: freshrss
+    restart: unless-stopped
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Vienna
+    volumes:
+      - config:/config
+    ports:
+      - 8180:80
+    networks:
+      - docker_net
